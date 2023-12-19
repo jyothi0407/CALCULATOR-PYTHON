@@ -1,0 +1,30 @@
+a=int(input("Enter value of a "))
+b=int(input("Enter value of b "))
+choice=input("Enter choice i.e \n1.additon\n2.subraction\n3.multiplication\n4.division\n5.remainder\n6.floor division\n")
+def addition():
+    return a+b
+def subtraction():
+    return a-b
+def multiplication():
+    return a*b
+def division():
+    return a/b
+def remainder():
+    return a%b
+def floordivision():
+    return a//b
+def default_value():
+    print("Invalid choice")
+def switch_case(case_value):
+    switch_dict={ 
+        1:addition,
+        2:subtraction,
+        3:multiplication,
+        4:division,
+        5:remainder,
+        6:floordivision }
+    selected_case=switch_dict.get(case_value,default_value)
+    result=selected_case()
+    return result
+result=switch_case(int(choice))
+print(result)
